@@ -1,0 +1,42 @@
+.Hamburger {
+  position: absolute;
+  right: 2rem;
+  cursor: pointer;
+}
+
+
+
+.Menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  background-color: rgb(202, 198, 117);
+  border-radius: 10px;
+}
+
+.Menu li {
+  padding: 10px;
+}
+
+.Menu li button {
+  background: none;
+  cursor: pointer;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: 0.5rem;
+  min-width: 6rem;
+}
+
+.Hamburger:hover .Menu,
+.Hamburger:focus-within .Menu {
+  transform: scaleY(1);
+  opacity: 1;
+}

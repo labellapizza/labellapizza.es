@@ -1,0 +1,18 @@
+.navbar {
+  display: none;
+}
+
+.hamburgerMenu {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    display: block;
+    background-color: red;
+  }
+
+  .hamburgerMenu {
+    display: none;
+  }
+}
