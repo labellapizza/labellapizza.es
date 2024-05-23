@@ -1,9 +1,11 @@
 .Hamburger {
-  position: absolute;
-  right: 2rem;
+  padding: 1rem;
   cursor: pointer;
 }
 
+.Hamburger svg {
+  scale: 2;
+}
 
 
 .Menu {
@@ -12,27 +14,34 @@
   right: 0;
   background: #fff;
   list-style: none;
-  padding: 0;
+  padding: 0 10px;
   margin: 0;
   transform-origin: top;
   transform: scaleY(0);
   transition: transform 0.3s ease-in-out;
   opacity: 0;
-  background-color: rgb(202, 198, 117);
+  background-color: #FD7968;
   border-radius: 10px;
 }
 
 .Menu li {
-  padding: 10px;
+  padding: 10px 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(182, 182, 182);
 }
 
+.Menu li:last-child {
+  border-bottom: none;
+}
 .Menu li button {
   background: none;
   cursor: pointer;
-  border: 1px solid grey;
   border-radius: 10px;
   padding: 0.5rem;
   min-width: 6rem;
+  border: none;
+    color: #fff;
+    font-weight: 600;
 }
 
 .Hamburger:hover .Menu,

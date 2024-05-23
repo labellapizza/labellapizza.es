@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { CiMenuKebab } from "react-icons/ci";
+import { IoIosMenu } from "react-icons/io";
 import styles from "./index.module.css";
 
 export default function HamburgerMenu() {
@@ -12,7 +12,7 @@ export default function HamburgerMenu() {
 
     return (
         <div className={styles.Hamburger} onClick={toggleMenu}>
-            <CiMenuKebab />
+            <IoIosMenu />
             {isOpen && (
                 <ul className={styles.Menu}>
                     <li>

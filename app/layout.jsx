@@ -1,10 +1,6 @@
-import { Inter } from "next/font/google";
-import HamburgerMenu from "@/components/HamburgerMenu";
 import Navbar from "@/components/Navbar";
 import styles from "./layout.module.css";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
     title: "Create Next App",
@@ -14,12 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body>
                 <div className={styles.navbar}>
                     <Navbar />
-                </div>
-                <div className={styles.hamburgerMenu}>
-                    <HamburgerMenu />
                 </div>
                 {children}
             </body>
