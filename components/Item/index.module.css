@@ -1,24 +1,69 @@
 .item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border: 1px solid #ddd;
-  padding: 20px;
+  border-bottom: 1px solid #ddd;
   margin: 10px;
-  border-radius: 5px;
+  padding-bottom: 1rem;
+    color: rgb(53, 53, 53)
+  }
+  
+  .itemLeftPortion {
+    min-width: 55%;
+  }
+  
+  .itemHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
 }
 
 .itemTitle {
-  font-size: 1.5em;
   margin-bottom: 10px;
+  margin: 0;
+    color: #ff4500;
 }
 
 .itemDescription {
-  margin: 5px 0;
+  margin: 10px 0;
+  }
+  
+  
+  .priceAndButtons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .buttonsBox {
+    display: flex;
+    margin-right: 1rem;
+    text-align: center;
 }
 
 .itemPrice {
   font-weight: bold;
+  margin: 0 1rem;
+    display: inline-block;
+    max-width: 30%;
+  }
+  
+  
+  .editButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    line-height: 1;
+    border-radius: 50%;
+    padding: 0.2rem;
+    margin: 0 0.5rem;
 }
 
 .itemImage {

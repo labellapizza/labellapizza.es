@@ -1,6 +1,7 @@
+import styles from "./index.module.css";
 export default function Navbar() {
     return (
-        <nav className="navbar">
+        <nav className={styles.navbar}>
             <div className="links">
                 <a href="/">Home</a>
                 <a href="/about">About</a>
