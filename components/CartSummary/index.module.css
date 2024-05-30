@@ -1,0 +1,36 @@
+.cartSummary {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #ff4500;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  z-index: 1000;
+  color: #fff;
+}
+
+.summaryDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.viewCartButton {
+  background-color: #292929;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-right: 2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  color: #ff956e;
+  font-weight: bold;
+}
+
+.viewCartButton:hover {
+  background-color: #005bb5;
+}

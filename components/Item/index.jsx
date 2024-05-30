@@ -1,32 +1,39 @@
 "use client";
 import { useState } from "react";
 import styles from "./index.module.css";
-import useCart from "@/hooks/useCart";
-import { FaTrashAlt } from "react-icons/fa";
 import {
     IoIosAddCircleOutline,
     IoIosRemoveCircleOutline,
 } from "react-icons/io";
 import { FaRegTrashAlt } from "react-icons/fa";
 
-export default function Item({ name, description, price, src }) {
-    const { addToCart, removeFromCart, getItemCount } = useCart();
+export default function Item({
+    name,
+    description,
+    price,
+    src,
+    addToCart,
+    removeFromCart,
+}) {
     const [isEditing, setIsEditing] = useState(false);
-
-    const itemCount = getItemCount(name);
+    const [itemCount, setItemCount] = useState(0);
 
     const handleAddToCart = () => {
         setIsEditing(true);
-        addToCart(name);
+        addToCart();
+        setItemCount((prevCount) => prevCount + 1);
     };
 
     const handleRemoveFromCart = () => {
-        if (itemCount === 1) {
-            removeFromCart(name);
-            setIsEditing(false);
-        } else {
-            removeFromCart(name);
-        }
+        removeFromCart();
+        setItemCount((prevCount) => {
+            const newCount = prevCount - 1;
+            if (newCount <= 0) {
+                setIsEditing(false);
+                return 0;
+            }
+            return newCount;
+        });
     };
 
     const handleEditToggle = () => {

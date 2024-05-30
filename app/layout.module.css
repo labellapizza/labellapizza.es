@@ -6,6 +6,22 @@
   display: block;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #FFF5D2;
+  color: #ff4500;
+}
+
+.header img {
+  width: 5rem;
+}
+
+.header h1 {
+  color: rgb(56, 56, 56);
+}
 @media (min-width: 768px) {
   .navbar {
     display: block;

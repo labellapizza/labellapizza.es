@@ -1,13 +1,2 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  background-color: #FFF5D2;
-    color: #ff4500;
-}
 
-.header img {
-  width: 5rem;
-}
 .menu {}

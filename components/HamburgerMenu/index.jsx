@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { IoIosMenu } from "react-icons/io";
 import styles from "./index.module.css";
+import Link from "next/link";
 
 export default function HamburgerMenu() {
     const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +10,7 @@ export default function HamburgerMenu() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+    //q: Change the code so that the user is redirected to the AboutPage when they click on the "Sobre nosotros" button.
 
     return (
         <div className={styles.Hamburger} onClick={toggleMenu}>
@@ -16,13 +18,19 @@ export default function HamburgerMenu() {
             {isOpen && (
                 <ul className={styles.Menu}>
                     <li>
-                        <button>Sobre nosotros</button>
+                        <Link className={styles.button} href={"/about"}>
+                            Sobre nosotros
+                        </Link>
                     </li>
                     <li>
-                        <button>Nuestras pizzas</button>
+                        <Link className={styles.button} href={"/"}>
+                            Nuestras pizzas
+                        </Link>
                     </li>
                     <li>
-                        <button>Carrito</button>
+                        <Link className={styles.button} href={"/cart"}>
+                            Carrito
+                        </Link>
                     </li>
                 </ul>
             )}
