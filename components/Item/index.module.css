@@ -6,11 +6,11 @@
   padding-bottom: 1rem;
     color: rgb(53, 53, 53)
   }
-  
+
   .itemLeftPortion {
     min-width: 55%;
   }
-  
+
   .itemHeader {
     display: flex;
     justify-content: space-between;
@@ -27,14 +27,13 @@
 .itemDescription {
   margin: 10px 0;
   }
-  
-  
+
   .priceAndButtons {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  
+
   .buttonsBox {
     display: flex;
     margin-right: 1rem;
@@ -47,8 +46,7 @@
     display: inline-block;
     max-width: 30%;
   }
-  
-  
+
   .editButton {
     display: flex;
     justify-content: center;
@@ -64,6 +62,7 @@
     border-radius: 50%;
     padding: 0.2rem;
     margin: 0 0.5rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .itemImage {

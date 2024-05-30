@@ -30,5 +30,5 @@
   transition: background-color 0.3s;
   font-weight: bold;
   text-decoration: none;
-  margin: 0;
+  margin: 0 0 1rem 0;
 }

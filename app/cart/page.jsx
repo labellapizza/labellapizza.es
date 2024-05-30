@@ -35,7 +35,7 @@ const CartPage = () => {
                     ))}
                     <div>
                         <h2 className={styles.total}>
-                            Total: ${calculateTotal().toFixed(2)}
+                            Total: {calculateTotal().toFixed(2)} €
                         </h2>
                     </div>
                     <Link
