@@ -17,9 +17,29 @@
 }
 
 .total {
-  text-align: center;
-}
+  text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+  }
 
+    .inputContainer {
+      margin-bottom: 20px;
+    }
+  
+    .inputContainer label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+  
+    .inputContainer input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
 .ConfirmButton {
   background-color: #ff4500;
   color: hsl(0, 0%, 0%);
@@ -31,4 +51,9 @@
   font-weight: bold;
   text-decoration: none;
   margin: 0 0 1rem 0;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
 }
