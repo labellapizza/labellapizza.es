@@ -5,17 +5,18 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 const client = twilio(accountSid, authToken);
 
 export default async function handler(req, res) {
-  console.log("handler in send-order.js was executed!!!!")
   if (req.method === 'POST') {
     const { orderDetails } = req.body;
 
     const message = `
-      Nuevo pedido:
+    Nuevo pedido de LaBellaPizza.es:
+    Items pedidos:
+    ${orderDetails.items.map(item => `${item.quantity} x ${item.name}`).join('\n')}
+    Total: ${orderDetails.total}
+    Detalles del cliente:
       Nombre: ${orderDetails.name}
       Direccion: ${orderDetails.address}
-      Items pedidos:
-      ${orderDetails.items.map(item => `${item.quantity} x ${item.name}`).join('\n')}
-      Total: ${orderDetails.total}
+      Telefono: ${orderDetails.phone}
     `;
 
     try {

@@ -11,6 +11,7 @@ const CartPage = () => {
     const { cart, clearCart } = useCart();
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
+    const [phone, setPhone] = useState("");
     const [errors, setErrors] = useState({ name: "", address: "" });
 
     const calculateTotal = () => {
@@ -21,7 +22,7 @@ const CartPage = () => {
     };
 
     const validate = () => {
-        const newErrors = { name: "", address: "" };
+        const newErrors = { name: "", address: "", phone: "" };
 
         if (!name) {
             newErrors.name = "El nombre es obligatorio";
@@ -31,13 +32,21 @@ const CartPage = () => {
             newErrors.address = "La dirección es obligatoria";
         }
 
+        if (!phone) {
+            newErrors.phone =
+                "El telefono es obligatorio, por si el repartidor tiene problemas para encontrar tu dirección, o para informar cualquier otro problema con tu pedido.";
+        }
+
         setErrors(newErrors);
-        return newErrors.name === "" && newErrors.address === "";
+        return (
+            newErrors.name === "" &&
+            newErrors.address === "" &&
+            newErrors.phone === ""
+        );
     };
 
     const sendOrderToWhatsApp = async (orderDetails) => {
         console.log("orderDetails", orderDetails);
-        console.log("sendOrderToWhatsApp");
         try {
             const response = await axios.post("/api/send-order", {
                 orderDetails,
@@ -68,8 +77,9 @@ const CartPage = () => {
             return;
         }
         const orderDetails = {
-            name: name,
-            address: address,
+            name,
+            address,
+            phone,
             items: cart.map((item) => ({
                 name: item.name,
                 quantity: item.amount,
@@ -125,6 +135,19 @@ const CartPage = () => {
                             <span className={styles.error}>
                                 {errors.address}
                             </span>
+                        )}
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <label htmlFor="phone">Telefono:</label>
+                        <input
+                            type="number"
+                            id="phone"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            required
+                        />
+                        {errors.phone && (
+                            <span className={styles.error}>{errors.phone}</span>
                         )}
                     </div>
                     <button
