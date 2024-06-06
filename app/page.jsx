@@ -141,14 +141,6 @@ export default function Home() {
                         description={pizza.description}
                         price={pizza.price}
                         src={pizza.src}
-                        addToCart={() =>
-                            addToCart({
-                                name: pizza.name,
-                                price: pizza.price,
-                                image: pizza.src,
-                            })
-                        }
-                        removeFromCart={() => removeFromCart(pizza.name)}
                     />
                 ))}
             </main>
