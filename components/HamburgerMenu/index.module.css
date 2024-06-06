@@ -20,9 +20,10 @@
   transform: scaleY(0);
   transition: transform 0.3s ease-in-out;
   opacity: 0;
-  background-color: #FF4500;
+  background-color: tomato;
   border-radius: 10px;
   margin-right: 0.3rem;
+  z-index: 2;
 }
 
 .Menu li {
@@ -41,7 +42,7 @@
   padding: 0.5rem;
   min-width: 6rem;
   border: none;
-    color: #fff;
+  color: white;
     font-weight: 600;
     text-decoration: none;
 }
