@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <CartProvider>
-                <body>
+                <body className={styles.body}>
                     <div className={styles.header}>
                         <img src="/Logo.jpeg" alt="logo" />
                         <h1>La Bella Pizza</h1>
