@@ -38,7 +38,7 @@ export default function About() {
                     className={styles.backgroundImage}
                 /> */}
                 <p>
-                    Podes pedir a travez de WhatsApp o desde el carrito. El
+                    Podes pedir a traves de WhatsApp o desde el carrito. El
                     repartidor te cobrara al entregar tu pedido.
                 </p>
             </div>

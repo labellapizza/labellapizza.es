@@ -2,14 +2,10 @@
 import React from "react";
 import styles from "./index.module.css";
 
-const CartItem = ({ item, onAdd, onRemove }) => {
+const CartItem = ({ item }) => {
     return (
         <div className={styles.cartItem}>
-            <img
-                src={item.image}
-                alt={item.name}
-                className={styles.itemImage}
-            />
+            <img src={item.src} alt={item.name} className={styles.itemImage} />
             <div className={styles.itemDetails}>
                 <h3>{item.name}</h3>
                 <p>Precio: ${item.price.toFixed(2)}</p>

@@ -21,7 +21,7 @@ export default function Item({ name, description, price, src }) {
 
     const handleAddToCart = () => {
         setIsEditing(true);
-        addToCart({ name, description, price });
+        addToCart({ name, description, price, src });
         setItemCount((prevCount) => prevCount + 1);
     };
 
