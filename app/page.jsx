@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import Item from "../components/Item";
+import Item from "@/components/Item";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import CartSummary from "../components/CartSummary";
 import { useCart } from "@/hooks/useCart";
 import styles from "./page.module.css";
@@ -124,13 +125,29 @@ const pizzas = [
 ];
 
 export default function Home() {
-    const { cart, addToCart, removeFromCart } = useCart();
+    const { cart } = useCart();
     const [isCartVisible, setIsCartVisible] = useState(false);
 
     useEffect(() => {
         setIsCartVisible(cart.length > 0);
     }, [cart]);
 
+    const createWhatsAppLink = () => {
+        const baseUrl = `https://wa.me/${
+            process.env.NEXT_PUBLIC_RECEIVER_WHATSAPP_NUMBER || "+34601611862"
+        }`;
+        if (cart.length < 1) {
+            return baseUrl;
+        }
+        const items =
+            cart.map(
+                (item) =>
+                    `${item.amount}x ${item.name} - ${item.price.toFixed(2)}€`
+            ) || [];
+        const message = `Hola, me gustaría pedir:\n${items.join("\n")}`;
+        console.log("cart", `${baseUrl}?text=${encodeURIComponent(message)}`);
+        return `${baseUrl}?text=${encodeURIComponent(message)}`;
+    };
     return (
         <div>
             <main className={styles.menu} style={{ marginBottom: "8rem" }}>
@@ -143,6 +160,18 @@ export default function Home() {
                         src={pizza.src}
                     />
                 ))}
+                {
+                    <a
+                        href={createWhatsAppLink()}
+                        className={
+                            isCartVisible
+                                ? styles.waWithCartSummary
+                                : styles.waWithoutCartSummary
+                        }
+                    >
+                        <WhatsAppButton />
+                    </a>
+                }
             </main>
             {isCartVisible && <CartSummary />}
         </div>

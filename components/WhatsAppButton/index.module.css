@@ -1,0 +1,19 @@
+.waContainer {
+  position: relative;
+  bottom: 1rem;
+  z-index: 3;
+  display: flex;
+  /* Centers the icon horizontally and vertically */
+  align-items: center;
+  justify-content: center;
+  /* WhatsApp official green color */
+}
+
+.whatsappButton {
+  font-size: 60px;
+  color: #25D366;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}

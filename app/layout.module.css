@@ -31,6 +31,7 @@
 .header h1 {
   color: rgb(56, 56, 56);
 }
+
 @media (min-width: 768px) {
   .navbar {
     display: block;

@@ -1,2 +1,12 @@
 
-.menu {}
+.waWithCartSummary {
+  position: fixed;
+  bottom: 7rem;
+  left: 1rem;
+}
+
+.waWithoutCartSummary {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}

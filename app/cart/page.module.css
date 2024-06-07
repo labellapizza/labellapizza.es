@@ -25,13 +25,13 @@
     .inputContainer {
       margin-bottom: 20px;
     }
-  
+
     .inputContainer label {
       display: block;
       font-weight: bold;
       margin-bottom: 8px;
     }
-  
+
     .inputContainer input {
       width: 100%;
       padding: 10px;
@@ -56,4 +56,9 @@
   color: red;
   font-size: 14px;
   margin-top: 4px;
+}
+.waWrapper {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
 }

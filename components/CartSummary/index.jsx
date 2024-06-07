@@ -14,25 +14,32 @@ const CartSummary = () => {
     };
 
     return (
-        <div className={styles.cartSummary}>
-            <div className={styles.summaryDetails}>
-                <p>
-                    Cantidad de pizzas:{" "}
-                    <span className={styles.number}>{getTotalItemCount()}</span>
-                </p>
-                <p>
-                    Total:
-                    <span className={styles.number}> {getTotalPrice()} €</span>
-                </p>
+        <>
+            <div className={styles.cartSummary}>
+                <div className={styles.summaryDetails}>
+                    <p>
+                        Cantidad de pizzas:{" "}
+                        <span className={styles.number}>
+                            {getTotalItemCount()}
+                        </span>
+                    </p>
+                    <p>
+                        Total:
+                        <span className={styles.number}>
+                            {" "}
+                            {getTotalPrice()} €
+                        </span>
+                    </p>
+                </div>
+                <Link
+                    href={"/cart"}
+                    onClick={handleViewCart}
+                    className={styles.viewCartButton}
+                >
+                    Ver carrito
+                </Link>
             </div>
-            <Link
-                href={"/cart"}
-                onClick={handleViewCart}
-                className={styles.viewCartButton}
-            >
-                Ver carrito
-            </Link>
-        </div>
+        </>
     );
 };
 

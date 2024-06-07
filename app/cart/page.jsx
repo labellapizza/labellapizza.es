@@ -4,6 +4,7 @@ import { useCart } from "@/hooks/useCart";
 import CartItem from "@/components/CartItem";
 import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import axios from "axios";
 
 const CartPage = () => {
@@ -13,6 +14,22 @@ const CartPage = () => {
     const [address, setAddress] = useState("");
     const [phone, setPhone] = useState("");
     const [errors, setErrors] = useState({ name: "", address: "" });
+
+    function createWhatsAppLink(cart) {
+        const baseUrl = `https://wa.me/${
+            process.env.NEXT_PUBLIC_RECEIVER_WHATSAPP_NUMBER || "+34601611862"
+        }`;
+        if (!cart) return baseUrl;
+        const items =
+            cart.items.map(
+                (item) =>
+                    `${item.amount}x ${item.name} - ${item.price.toFixed(2)}€`
+            ) || [];
+        const message = `Hola, me gustaría pedir:\n${items.join(
+            "\n"
+        )}\nTotal: ${calculateTotal().toFixed(2)}€`;
+        return `${baseUrl}?text=${encodeURIComponent(message)}`;
+    }
 
     const calculateTotal = () => {
         return cart.reduce(
@@ -159,6 +176,9 @@ const CartPage = () => {
                     </button>
                 </>
             )}
+            <a href={createWhatsAppLink()} className={styles.waWrapper}>
+                <WhatsAppButton />
+            </a>
         </div>
     );
 };

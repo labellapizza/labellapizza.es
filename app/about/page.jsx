@@ -1,6 +1,14 @@
+"use client";
 import styles from "./page.module.css";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function About() {
+    function createWhatsAppLink() {
+        const message = "Hola, quiero hacer un pedido.";
+        return `https://wa.me/${
+            process.env.NEXT_PUBLIC_RECEIVER_WHATSAPP_NUMBER || "+34601611862"
+        }?text=${encodeURIComponent(message)}`;
+    }
     return (
         <div className={styles.container}>
             <div className={styles.hero}>
@@ -34,6 +42,9 @@ export default function About() {
                     repartidor te cobrara al entregar tu pedido.
                 </p>
             </div>
+            <a href={createWhatsAppLink()} className={styles.waWrapper}>
+                <WhatsAppButton />
+            </a>
         </div>
     );
 }
