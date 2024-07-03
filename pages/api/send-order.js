@@ -9,14 +9,12 @@ export default async function handler(req, res) {
     const { orderDetails } = req.body;
 
     const message = `
-    Nuevo pedido de LaBellaPizza.es:
-    Items pedidos:
-    ${orderDetails.items.map(item => `${item.quantity} x ${item.name}`).join('\n')}
+    Nuevo pedido:
+    ${orderDetails.items.map(item => `${item.name} x ${item.quantity}`).join('\n')}
     Total: ${orderDetails.total}
-    Detalles del cliente:
       Nombre: ${orderDetails.name}
-      Direccion: ${orderDetails.address}
-      Telefono: ${orderDetails.phone}
+      Dir: ${orderDetails.address}
+      Tel: ${orderDetails.phone}
     `;
 
     try {
