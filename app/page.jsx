@@ -11,95 +11,95 @@ const pizzas = [
         name: "Margarita",
         description: "Salsa de tomate, mozzarella, albahaca, aceite de oliva.",
         price: 8,
-        src: "/pizza-pie.jpg",
+        src: "/margarita.jpg",
     },
     {
         name: "Marinara",
         description:
             "Salsa de tomate con ajo, albahaca, orégano, aceite de oliva.",
         price: 8,
-        src: "/pizza-pie.jpg",
+        src: "/marinara.jpg",
     },
     {
         name: "Calzone",
         description:
             "Mozzarella, carne picada, jamón York, aceite de oliva, oregano.",
         price: 8,
-        src: "/pizza-pie.jpg",
+        src: "/calzone.jpg",
     },
     {
         name: "Jamón y Queso",
         description: "Salsa de tomate, mozzarella, jamón York, champiñones.",
         price: 10,
-        src: "/pizza-pie.jpg",
+        src: "/jyq.jpg",
     },
     {
         name: "Cuatro Quesos",
         description:
             "Salsa de tomate, mozzarella Gorgonzola, parmesano, queso azul.",
         price: 10,
-        src: "/pizza-pie.jpg",
+        src: "/4q.jpg",
     },
     {
         name: "Carbonara",
         description:
             "Salsa bacon, mozzarella, champiñones, huevo, aceite de oliva.",
         price: 10,
-        src: "/pizza-pie.jpg",
+        src: "/carbonara.jpg",
     },
     {
         name: "Pepperoni",
         description:
             "Salsa de tomate, mozzarella, pepperoni, orégano, albahaca.",
         price: 10,
-        src: "/pizza-pie.jpg",
+        src: "/pepperoni.jpg",
     },
     {
         name: "Diavola",
         description:
             "Salsa de tomate, mozzarella, chorizo picante, aceite de oliva.",
         price: 10,
-        src: "/pizza-pie.jpg",
+        src: "/diavola.jpg",
     },
     {
         name: "Vegetariana",
         description:
             "Salsa de tomate, mozzarella, pimiento rojo y verde, champiñones, cebolla, aceitunas.",
         price: 10,
-        src: "/pizza-pie.jpg",
+        src: "/vegetariana.jpg",
     },
     {
         name: "Boscaiola",
         description: "Mozzarella, salchichas, champiñones, aceite de oliva.",
         price: 10,
-        src: "/pizza-pie.jpg",
+        src: "/boscaiola.jpg",
     },
     {
         name: "Barbacoa",
         description:
             "Salsa de tomate, muzzarella, carne picada, pimiento rojo y verde, cebolla, salsa barbacoa.",
         price: 11,
-        src: "/pizza-pie.jpg",
+        src: "/barbacoa.jpg",
     },
     {
         name: "Caprichosa",
         description:
             "Salsa de tomate, mozzarella, jamón York, alcachofas, champiñones y aceitunas.",
         price: 11,
-        src: "/pizza-pie.jpg",
+        src: "/caprichosa.jpg",
     },
     {
         name: "Hawaiana",
         description: "Salsa de tomate, mozzarella, jamón York, piña.",
         price: 11,
-        src: "/pizza-pie.jpg",
+        src: "/hawaiana.jpg",
     },
     {
         name: "Pollo",
         description:
             "Salsa de tomate, mozzarella, pollo, pimientos rojos y verdes, champiñones.",
         price: 11,
-        src: "/pizza-pie.jpg",
+        src: "/pollo.jpg",
     },
     {
         name: "Mariscos",
