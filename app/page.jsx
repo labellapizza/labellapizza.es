@@ -106,21 +106,21 @@ const pizzas = [
         description:
             "Salsa de tomate, mozzarella, calamar en su tinta, mejillones.",
         price: 12,
-        src: "/pizza-pie.jpg",
+        src: "/mariscos.jpg",
     },
     {
         name: "Mexicana",
         description:
             "Salsa de tomate, mozzarella, cebolla, carne picada, jalapeño, aguacate.",
         price: 12,
-        src: "/pizza-pie.jpg",
+        src: "/mexicana.jpg",
     },
     {
         name: "Ibérica",
         description:
             "Salsa de tomate, mozzarella, jamón crudo, tomate Cherry, aceite de oliva.",
         price: 12,
-        src: "/pizza-pie.jpg",
+        src: "/iberica.jpg",
     },
 ];
 
