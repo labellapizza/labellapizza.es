@@ -24,7 +24,7 @@ export default async function handler(req, res) {
       await client.messages.create({
         body: message,
         from: process.env.TWILIO_WHATSAPP_NUMBER,
-        to: process.env.RECEIVER_WHATSAPP_NUMBER,
+							to: process.env.NEXT_PUBLIC_RECEIVER_WHATSAPP_NUMBER,
       });
       res.status(200).json({ success: true });
 
