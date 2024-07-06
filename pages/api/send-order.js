@@ -8,21 +8,30 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { orderDetails } = req.body;
 
-    const message = `
-    Nuevo pedido:
-    ${orderDetails.items.map(item => `${item.name} x ${item.quantity}`).join('\n')}
-    Total: ${orderDetails.total}
-      Nombre: ${orderDetails.name}
-      Dir: ${orderDetails.address}
-      Tel: ${orderDetails.phone}
-    `;
+			// const itemsString = orderDetails.items.map(item => `- ${item.name} x ${item.quantity}`).join('\n');
+
+			// const templateParameters = {
+			// 	1: itemsString,
+			// 	2: orderDetails.total,
+			// 	3: orderDetails.name,
+			// 	4: orderDetails.address,
+			// 	5: orderDetails.phone
+			// };
+
+			const message = `Nuevo pedido:
+			 ${orderDetails.items.map(item => `${item.name} x ${item.quantity}`).join('\n')}
+			 Total: ${orderDetails.total}
+			 Nombre: ${orderDetails.name}
+			 Dir: ${orderDetails.address}
+			 ${orderDetails.phone}: Tel`;
 
     try {
 
       await client.messages.create({
-        body: message,
-        from: process.env.TWILIO_WHATSAPP_NUMBER,
-							to: process.env.NEXT_PUBLIC_RECEIVER_WHATSAPP_NUMBER,
+							from: `whatsapp:${process.env.TWILIO_WHATSAPP_NUMBER}`,
+							body: message,
+							to: `whatsapp:${process.env.NEXT_PUBLIC_RECEIVER_WHATSAPP_NUMBER}`,
+
       });
       res.status(200).json({ success: true });
 

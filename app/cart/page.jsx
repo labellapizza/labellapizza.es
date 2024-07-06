@@ -21,7 +21,7 @@ const CartPage = () => {
         }`;
         if (!cart) return baseUrl;
         const items =
-            cart.items.map(
+            cart.map(
                 (item) =>
                     `${item.amount}x ${item.name} - ${item.price.toFixed(2)}€`
             ) || [];
@@ -49,10 +49,10 @@ const CartPage = () => {
             newErrors.address = "La dirección es obligatoria";
         }
 
-        if (!phone) {
-            newErrors.phone =
-                "El telefono es obligatorio, por si el repartidor tiene problemas para encontrar tu dirección, o para informar cualquier otro problema con tu pedido.";
-        }
+        // if (!phone) {
+        //     newErrors.phone =
+        //         "El telefono es obligatorio, por si el repartidor tiene problemas para encontrar tu dirección, o para informar cualquier otro problema con tu pedido.";
+        // }
 
         setErrors(newErrors);
         return (
@@ -93,19 +93,25 @@ const CartPage = () => {
             alert("Por favor completa todos los campos requeridos.");
             return;
         }
-        const orderDetails = {
-            name,
-            address,
-            phone,
-            items: cart.map((item) => ({
-                name: item.name,
-                quantity: item.amount,
-                price: item.price,
-            })),
-            total: calculateTotal().toFixed(2),
-        };
 
-        await sendOrderToWhatsApp(orderDetails);
+        // const orderDetails = {
+        //     name,
+        //     address,
+        //     phone,
+        //     items: cart.map((item) => ({
+        //         name: item.name,
+        //         quantity: item.amount,
+        //         price: item.price,
+        //     })),
+        //     total: calculateTotal().toFixed(2),
+        // };
+
+        // Optionally, send the order details to the server
+        // await sendOrderToWhatsApp(orderDetails);
+
+        // Generate the WhatsApp link and redirect
+        const whatsappLink = createWhatsAppLink(cart);
+        window.location.href = whatsappLink;
 
         clearCart();
         router.push("/");
@@ -154,7 +160,7 @@ const CartPage = () => {
                             </span>
                         )}
                     </div>
-                    <div className={styles.inputContainer}>
+                    {/* <div className={styles.inputContainer}>
                         <label htmlFor="phone">Telefono:</label>
                         <input
                             type="number"
@@ -166,19 +172,16 @@ const CartPage = () => {
                         {errors.phone && (
                             <span className={styles.error}>{errors.phone}</span>
                         )}
-                    </div>
+                    </div> */}
                     <button
                         type="submit"
                         onClick={handleSubmit}
                         className={styles.ConfirmButton}
                     >
-                        Confirmar pedido
+                        Confirmar pedido por WhatsApp
                     </button>
                 </>
             )}
-            <a href={createWhatsAppLink()} className={styles.waWrapper}>
-                <WhatsAppButton />
-            </a>
         </div>
     );
 };
