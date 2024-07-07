@@ -198,7 +198,7 @@ const items = [
     {
         name: "Agua mineral La Serreta (1,5L)",
         description: "Bebidas",
-        price: 3,
+        price: 1.5,
         src: "/drinks/aguaLS15L.jpg",
         type: "Drinks",
     },
