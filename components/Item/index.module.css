@@ -65,7 +65,13 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 }
 
+.itemRightPortion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .itemImage {
   width: 100%;
   height: auto;
+  max-height: 200px;
 }

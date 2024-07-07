@@ -10,7 +10,6 @@ export default function HamburgerMenu() {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-    //q: Change the code so that the user is redirected to the AboutPage when they click on the "Sobre nosotros" button.
 
     return (
         <div className={styles.Hamburger} onClick={toggleMenu}>
@@ -23,9 +22,24 @@ export default function HamburgerMenu() {
                         </Link>
                     </li>
                     <li>
-                        <Link className={styles.button} href={"/"}>
-                            Nuestras pizzas
-                        </Link>
+                        <ul className={styles.subMenu}>
+                            <li className={styles.subMenuItem}>
+                                <Link
+                                    className={styles.button}
+                                    href={"/#nuestras-pizzas"}
+                                >
+                                    Nuestras pizzas
+                                </Link>
+                            </li>
+                            <li className={styles.subMenuItem}>
+                                <Link
+                                    className={styles.button}
+                                    href={"/#drinks"}
+                                >
+                                    Bebidas
+                                </Link>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <Link className={styles.button} href={"/cart"}>

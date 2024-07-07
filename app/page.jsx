@@ -6,12 +6,13 @@ import CartSummary from "../components/CartSummary";
 import { useCart } from "@/hooks/useCart";
 import styles from "./page.module.css";
 
-const pizzas = [
+const items = [
     {
         name: "Margarita",
         description: "Salsa de tomate, mozzarella, albahaca, aceite de oliva.",
         price: 8,
         src: "/margarita.jpg",
+        type: "Pizzas",
     },
     {
         name: "Marinara",
@@ -19,6 +20,7 @@ const pizzas = [
             "Salsa de tomate con ajo, albahaca, orégano, aceite de oliva.",
         price: 8,
         src: "/marinara.jpg",
+        type: "Pizzas",
     },
     {
         name: "Calzone",
@@ -26,12 +28,14 @@ const pizzas = [
             "Mozzarella, carne picada, jamón York, aceite de oliva, oregano.",
         price: 8,
         src: "/calzone.jpg",
+        type: "Pizzas",
     },
     {
         name: "Jamón y Queso",
         description: "Salsa de tomate, mozzarella, jamón York, champiñones.",
         price: 10,
         src: "/jyq.jpg",
+        type: "Pizzas",
     },
     {
         name: "Cuatro Quesos",
@@ -39,6 +43,7 @@ const pizzas = [
             "Salsa de tomate, mozzarella Gorgonzola, parmesano, queso azul.",
         price: 10,
         src: "/4q.jpg",
+        type: "Pizzas",
     },
     {
         name: "Carbonara",
@@ -46,6 +51,7 @@ const pizzas = [
             "Salsa bacon, mozzarella, champiñones, huevo, aceite de oliva.",
         price: 10,
         src: "/carbonara.jpg",
+        type: "Pizzas",
     },
     {
         name: "Pepperoni",
@@ -53,6 +59,7 @@ const pizzas = [
             "Salsa de tomate, mozzarella, pepperoni, orégano, albahaca.",
         price: 10,
         src: "/pepperoni.jpg",
+        type: "Pizzas",
     },
     {
         name: "Diavola",
@@ -60,6 +67,7 @@ const pizzas = [
             "Salsa de tomate, mozzarella, chorizo picante, aceite de oliva.",
         price: 10,
         src: "/diavola.jpg",
+        type: "Pizzas",
     },
     {
         name: "Vegetariana",
@@ -67,12 +75,14 @@ const pizzas = [
             "Salsa de tomate, mozzarella, pimiento rojo y verde, champiñones, cebolla, aceitunas.",
         price: 10,
         src: "/vegetariana.jpg",
+        type: "Pizzas",
     },
     {
         name: "Boscaiola",
         description: "Mozzarella, salchichas, champiñones, aceite de oliva.",
         price: 10,
         src: "/boscaiola.jpg",
+        type: "Pizzas",
     },
     {
         name: "Barbacoa",
@@ -80,6 +90,7 @@ const pizzas = [
             "Salsa de tomate, muzzarella, carne picada, pimiento rojo y verde, cebolla, salsa barbacoa.",
         price: 11,
         src: "/barbacoa.jpg",
+        type: "Pizzas",
     },
     {
         name: "Caprichosa",
@@ -87,12 +98,14 @@ const pizzas = [
             "Salsa de tomate, mozzarella, jamón York, alcachofas, champiñones y aceitunas.",
         price: 11,
         src: "/caprichosa.jpg",
+        type: "Pizzas",
     },
     {
         name: "Hawaiana",
         description: "Salsa de tomate, mozzarella, jamón York, piña.",
         price: 11,
         src: "/hawaiana.jpg",
+        type: "Pizzas",
     },
     {
         name: "Pollo",
@@ -100,6 +113,7 @@ const pizzas = [
             "Salsa de tomate, mozzarella, pollo, pimientos rojos y verdes, champiñones.",
         price: 11,
         src: "/pollo.jpg",
+        type: "Pizzas",
     },
     {
         name: "Mariscos",
@@ -107,6 +121,7 @@ const pizzas = [
             "Salsa de tomate, mozzarella, calamar en su tinta, mejillones.",
         price: 12,
         src: "/mariscos.jpg",
+        type: "Pizzas",
     },
     {
         name: "Mexicana",
@@ -114,6 +129,7 @@ const pizzas = [
             "Salsa de tomate, mozzarella, cebolla, carne picada, jalapeño, aguacate.",
         price: 12,
         src: "/mexicana.jpg",
+        type: "Pizzas",
     },
     {
         name: "Ibérica",
@@ -121,6 +137,91 @@ const pizzas = [
             "Salsa de tomate, mozzarella, jamón crudo, tomate Cherry, aceite de oliva.",
         price: 12,
         src: "/iberica.jpg",
+        type: "Pizzas",
+    },
+    {
+        name: "Cerveza Amstel (33cl)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/amstel-33cl.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Coca Cola (330ml)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/coca-cola-33-cl.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Fanta (33cl)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/fanta.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Aquarius Limon (330ml)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/aquarius-limon-330ml.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Sprite Lima-limon (330ml)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/sprite-330.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Coca-cola zero-azucar (330ml)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/coca-zero-330.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Aquarius Naranja (330ml)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/aq-nar-330.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Te negro Nestea con Limon (330ml)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/te-negro-330.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Agua mineral La Serreta (1,5L)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/aguaLS15L.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Cerveza Amstel (1L)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/cerveza-amstel1L.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Coca-cola original (2L)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/coca-cola-original-2L.jpg",
+        type: "Drinks",
+    },
+    {
+        name: "Coca-cola Zero (2L)",
+        description: "Bebidas",
+        price: 1.5,
+        src: "/drinks/coca-zero2L.png",
+        type: "Drinks",
     },
 ];
 
@@ -151,7 +252,8 @@ export default function Home() {
     return (
         <div>
             <main className={styles.menu} style={{ marginBottom: "8rem" }}>
-                {pizzas.map((pizza) => (
+                <h1 id="Nuestas-pizzas">Nuestras pizzas</h1>
+                {items.map((pizza) => (
                     <Item
                         key={pizza.name}
                         name={pizza.name}

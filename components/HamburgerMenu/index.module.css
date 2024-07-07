@@ -32,9 +32,11 @@
     border-bottom: 1px solid rgb(182, 182, 182);
 }
 
+
 .Menu li:last-child {
   border-bottom: none;
 }
+
 .Menu li .button {
   background: none;
   cursor: pointer;
@@ -51,4 +53,21 @@
 .Hamburger:focus-within .Menu {
   transform: scaleY(1);
   opacity: 1;
+}
+.Menu li.drinks:before {
+  content: "";
+  display: block;
+  height: 0px;
+  background-color: white;
+  margin: 10px 0;
+}
+
+
+.subMenu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.subMenuItem {
+  margin-bottom: 0;
 }
