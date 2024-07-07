@@ -252,28 +252,48 @@ export default function Home() {
     return (
         <div>
             <main className={styles.menu} style={{ marginBottom: "8rem" }}>
-                <h1 id="Nuestas-pizzas">Nuestras pizzas</h1>
-                {items.map((pizza) => (
-                    <Item
-                        key={pizza.name}
-                        name={pizza.name}
-                        description={pizza.description}
-                        price={pizza.price}
-                        src={pizza.src}
-                    />
-                ))}
-                {
-                    <a
-                        href={createWhatsAppLink()}
-                        className={
-                            isCartVisible
-                                ? styles.waWithCartSummary
-                                : styles.waWithoutCartSummary
-                        }
-                    >
-                        <WhatsAppButton />
-                    </a>
-                }
+                <h2 id="nuestas-pizzas" className={styles.anchorHeader}>
+                    Nuestras pizzas
+                </h2>
+                {items
+                    .filter((item) => item.type === "Pizzas")
+                    .map((item) => {
+                        return (
+                            <Item
+                                key={item.name}
+                                name={item.name}
+                                description={item.description}
+                                price={item.price}
+                                src={item.src}
+                            />
+                        );
+                    })}
+                <h2 id="bebidas" className={styles.anchorHeader}>
+                    Bebidas
+                </h2>
+                {items
+                    .filter((item) => item.type === "Drinks")
+                    .map((item) => {
+                        return (
+                            <Item
+                                key={item.name}
+                                name={item.name}
+                                description={item.description}
+                                price={item.price}
+                                src={item.src}
+                            />
+                        );
+                    })}
+                <a
+                    href={createWhatsAppLink()}
+                    className={
+                        isCartVisible
+                            ? styles.waWithCartSummary
+                            : styles.waWithoutCartSummary
+                    }
+                >
+                    <WhatsAppButton />
+                </a>
             </main>
             {isCartVisible && <CartSummary />}
         </div>

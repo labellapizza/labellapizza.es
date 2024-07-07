@@ -10,3 +10,9 @@
   bottom: 1rem;
   left: 1rem;
 }
+.anchorHeader {
+  padding-top: 90px;
+  margin-top: -90px;
+  display: block;
+  text-align: center;
+}

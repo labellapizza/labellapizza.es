@@ -34,7 +34,7 @@ export default function HamburgerMenu() {
                             <li className={styles.subMenuItem}>
                                 <Link
                                     className={styles.button}
-                                    href={"/#drinks"}
+                                    href={"/#bebidas"}
                                 >
                                     Bebidas
                                 </Link>

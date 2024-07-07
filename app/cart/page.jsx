@@ -12,7 +12,6 @@ const CartPage = () => {
     const { cart, clearCart } = useCart();
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
-    const [phone, setPhone] = useState("");
     const [errors, setErrors] = useState({ name: "", address: "" });
 
     function createWhatsAppLink(cart) {
@@ -27,7 +26,9 @@ const CartPage = () => {
             ) || [];
         const message = `Hola, me gustaría pedir:\n${items.join(
             "\n"
-        )}\nTotal: ${calculateTotal().toFixed(2)}€`;
+        )}\nTotal: ${calculateTotal().toFixed(2)}€\n
+        Nombre: ${name}\n
+        Direccion: ${address}`;
         return `${baseUrl}?text=${encodeURIComponent(message)}`;
     }
 
