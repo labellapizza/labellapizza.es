@@ -90,7 +90,7 @@ const CartPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validate()) {
-            alert("Por favor completa todos los campos requeridos.");
+            // alert("Por favor completa todos los campos requeridos.");
             return;
         }
 
